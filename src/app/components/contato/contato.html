@@ -1,0 +1,66 @@
+<section class="contato" id="contato">
+  <div class="container">
+    <div class="contato-info fade-in">
+      <span class="section-tag">Fale Conosco</span>
+      <h2 class="section-title">Solicite um <span>Orçamento</span></h2>
+      <p class="section-subtitle">
+        Nossa equipe comercial responde em até 24 horas úteis.
+        Informe seus dados e o tipo de serviço desejado.
+      </p>
+
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-phone"></i> <span>(11) 99999-0000</span></li>
+        <li><i class="fa-solid fa-envelope"></i> <span>contato&#64;voxambiental.com.br</span></li>
+        <li><i class="fa-solid fa-location-dot"></i> <span>Rua das Palmeiras, 500 – São Paulo, SP</span></li>
+        <li><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp: (11) 99999-0000</span></li>
+      </ul>
+    </div>
+
+    <form class="contato-form fade-in" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="field">
+        <label>Nome completo</label>
+        <input type="text" formControlName="nome" placeholder="Seu nome" />
+        <span class="error" *ngIf="touched('nome') && form.get('nome')?.invalid">Nome é obrigatório.</span>
+      </div>
+
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" formControlName="email" placeholder="seu&#64;email.com" />
+        <span class="error" *ngIf="touched('email') && form.get('email')?.invalid">E-mail inválido.</span>
+      </div>
+
+      <div class="field">
+        <label>Telefone</label>
+        <input type="tel" formControlName="telefone" placeholder="(11) 99999-0000" (input)="maskPhone($event)" maxlength="15" />
+      </div>
+
+      <div class="field">
+        <label>Serviço desejado</label>
+        <select formControlName="servico">
+          <option value="">Selecione...</option>
+          <option>Coleta de RSU</option>
+          <option>Resíduos Industriais</option>
+          <option>RSS – Saúde</option>
+          <option>Coleta Seletiva</option>
+          <option>Gestão Municipal</option>
+          <option>Outro</option>
+        </select>
+      </div>
+
+      <div class="field field-full">
+        <label>Mensagem</label>
+        <textarea formControlName="mensagem" rows="4" placeholder="Descreva sua necessidade..."></textarea>
+      </div>
+
+      <div class="field field-full">
+        <button type="submit" class="btn btn-primary" [disabled]="sending">
+          <i class="fa-solid fa-paper-plane"></i>
+          {{ sending ? 'Enviando...' : 'Enviar Mensagem' }}
+        </button>
+        <p class="success-msg" *ngIf="sent">
+          <i class="fa-solid fa-circle-check"></i> Mensagem enviada! Retornaremos em breve.
+        </p>
+      </div>
+    </form>
+  </div>
+</section>

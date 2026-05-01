@@ -1,0 +1,106 @@
+.contato {
+  padding: 100px 24px;
+  background: var(--dark-alt);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+  }
+}
+
+.contato-info {
+  .section-subtitle { margin-bottom: 36px; }
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+
+    i {
+      width: 36px;
+      height: 36px;
+      background: rgba(0, 200, 83, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.contato-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &-full { grid-column: span 2; }
+
+  label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  input, select, textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.9rem;
+    transition: border-color 0.25s;
+    outline: none;
+
+    &:focus { border-color: var(--accent); }
+    &::placeholder { color: rgba(165, 214, 167, 0.4); }
+  }
+
+  select option { background: var(--dark-alt); }
+
+  textarea { resize: vertical; min-height: 100px; }
+}
+
+.error {
+  font-size: 0.78rem;
+  color: #ff5252;
+}
+
+.success-msg {
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 1024px) {
+  .contato .container { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 480px) {
+  .contato-form { grid-template-columns: 1fr; }
+  .field-full { grid-column: auto; }
+}

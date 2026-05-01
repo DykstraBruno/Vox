@@ -1,0 +1,24 @@
+<section class="depoimentos" id="depoimentos">
+  <div class="container">
+    <div class="dep-header fade-in">
+      <span class="section-tag">O Que Dizem</span>
+      <h2 class="section-title">Depoimentos de <span>Clientes</span></h2>
+    </div>
+
+    <div class="dep-grid stagger-children">
+      <blockquote class="dep-card" *ngFor="let d of depoimentos">
+        <div class="dep-stars">
+          <i class="fa-solid fa-star" *ngFor="let s of [1,2,3,4,5]"></i>
+        </div>
+        <p>"{{ d.texto }}"</p>
+        <footer>
+          <div class="dep-avatar">{{ d.iniciais }}</div>
+          <div>
+            <strong>{{ d.nome }}</strong>
+            <span>{{ d.cargo }}</span>
+          </div>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</section>

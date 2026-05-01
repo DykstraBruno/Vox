@@ -1,0 +1,67 @@
+.depoimentos {
+  padding: 100px 24px;
+  background: var(--dark);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.dep-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.dep-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.dep-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .dep-stars i { color: #ffd740; font-size: 0.9rem; }
+
+  p {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.dep-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.dep-card footer div {
+  display: flex;
+  flex-direction: column;
+  strong { font-size: 0.9rem; color: var(--text); }
+  span   { font-size: 0.78rem; color: var(--text-muted); }
+}

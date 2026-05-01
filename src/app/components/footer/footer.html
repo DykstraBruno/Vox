@@ -1,0 +1,44 @@
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-brand">
+        <img src="logo.svg" alt="Vox Ambiental" class="footer-logo" />
+        <p>Coleta, transporte e destinação final de resíduos sólidos com responsabilidade ambiental.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/vox.ambiental/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://wa.me/5511999990000" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-nav">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#sobre"        (click)="scroll($event,'sobre')">Sobre</a></li>
+          <li><a href="#servicos"     (click)="scroll($event,'servicos')">Serviços</a></li>
+          <li><a href="#projetos"     (click)="scroll($event,'projetos')">Projetos</a></li>
+          <li><a href="#depoimentos"  (click)="scroll($event,'depoimentos')">Depoimentos</a></li>
+          <li><a href="#contato"      (click)="scroll($event,'contato')">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <ul>
+          <li><i class="fa-solid fa-phone"></i> (11) 99999-0000</li>
+          <li><i class="fa-solid fa-envelope"></i> contato&#64;voxambiental.com.br</li>
+          <li><i class="fa-solid fa-location-dot"></i> São Paulo, SP</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ year }} Vox Ambiental. Todos os direitos reservados.</p>
+  </div>
+</footer>

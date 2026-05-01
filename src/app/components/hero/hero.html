@@ -1,0 +1,35 @@
+<section class="hero" id="home">
+  <canvas #particleCanvas class="particle-canvas"></canvas>
+  <div class="hero-bg"></div>
+
+  <div class="hero-content fade-in">
+    <span class="section-tag">Coleta &amp; Transporte de Resíduos</span>
+    <h1 class="hero-title">
+      Soluções <span>Inteligentes</span><br>para o Meio Ambiente
+    </h1>
+    <p class="hero-subtitle">
+      A Vox Ambiental é especializada em coleta, transporte e
+      destinação final de resíduos sólidos — urbanos, industriais
+      e de serviços de saúde — com responsabilidade e eficiência.
+    </p>
+    <div class="hero-actions">
+      <a href="#servicos" class="btn btn-primary" (click)="scroll($event,'servicos')">
+        <i class="fa-solid fa-recycle"></i> Nossos Serviços
+      </a>
+      <a href="#contato" class="btn btn-outline" (click)="scroll($event,'contato')">
+        <i class="fa-solid fa-phone"></i> Fale Conosco
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item" *ngFor="let s of stats">
+      <span class="stat-number" [attr.data-target]="s.value">0</span>
+      <span class="stat-label">{{ s.label }}</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-dot"></div>
+  </div>
+</section>

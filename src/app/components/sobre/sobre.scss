@@ -1,0 +1,87 @@
+.sobre {
+  padding: 100px 24px;
+  background: var(--dark-alt);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+}
+
+.sobre-image {
+  position: relative;
+
+  img {
+    width: 100%;
+    border-radius: var(--radius);
+  }
+}
+
+.sobre-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--accent);
+  color: var(--dark);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+
+  .badge-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .badge-txt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.sobre-content {
+  .section-subtitle { margin-bottom: 16px; }
+}
+
+.sobre-text {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.sobre-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+
+    i { color: var(--accent); font-size: 1rem; }
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .sobre-badge {
+    bottom: -16px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,34 @@
+<section class="sobre" id="sobre">
+  <div class="container">
+    <div class="sobre-image fade-in">
+      <img src="sobre.svg" alt="Equipe Vox Ambiental em campo" />
+      <div class="sobre-badge">
+        <span class="badge-num">15+</span>
+        <span class="badge-txt">Anos de<br>experiência</span>
+      </div>
+    </div>
+
+    <div class="sobre-content">
+      <span class="section-tag">Sobre Nós</span>
+      <h2 class="section-title">
+        Comprometidos com o <span>futuro do planeta</span>
+      </h2>
+      <p class="section-subtitle">
+        A Vox Ambiental nasceu com a missão de transformar a gestão de resíduos sólidos em uma prática sustentável, eficiente e acessível para municípios e indústrias de todo o país.
+      </p>
+      <p class="sobre-text">
+        Com mais de 15 anos de atuao no setor, nossa equipe altamente qualificada opera uma frota moderna, seguindo rigorosamente a legislação ambiental vigente e as melhores práticas internacionais de gestão de resíduos.
+      </p>
+
+      <ul class="sobre-features stagger-children">
+        <li *ngFor="let f of features">
+          <i class="fa-solid fa-circle-check"></i> {{ f }}
+        </li>
+      </ul>
+
+      <a href="#contato" class="btn btn-primary" (click)="scroll($event,'contato')">
+        <i class="fa-solid fa-arrow-right"></i> Saiba mais
+      </a>
+    </div>
+  </div>
+</section>

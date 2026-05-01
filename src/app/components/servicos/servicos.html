@@ -1,0 +1,25 @@
+<section class="servicos" id="servicos">
+  <div class="container">
+    <div class="servicos-header fade-in">
+      <span class="section-tag">O Que Fazemos</span>
+      <h2 class="section-title">Nossos <span>Serviços</span></h2>
+      <p class="section-subtitle">
+        Soluções completas para coleta, transporte e destinação
+        final de todos os tipos de resíduos sólidos.
+      </p>
+    </div>
+
+    <div class="servicos-grid stagger-children">
+      <div class="servico-card" *ngFor="let s of servicos">
+        <div class="card-icon">
+          <i [class]="'fa-solid ' + s.icon"></i>
+        </div>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.desc }}</p>
+        <ul>
+          <li *ngFor="let item of s.items"><i class="fa-solid fa-check"></i> {{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

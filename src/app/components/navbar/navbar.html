@@ -1,0 +1,19 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+    <a class="nav-brand" href="#home" (click)="scrollTo($event,'home')">
+      <img src="logo.svg" alt="Vox Ambiental" class="nav-logo" />
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li><a href="#sobre"     (click)="closeMenu($event,'sobre')">Sobre</a></li>
+      <li><a href="#servicos"  (click)="closeMenu($event,'servicos')">Serviços</a></li>
+      <li><a href="#projetos"  (click)="closeMenu($event,'projetos')">Projetos</a></li>
+      <li><a href="#galeria"   (click)="closeMenu($event,'galeria')">Galeria</a></li>
+      <li><a href="#contato"   (click)="closeMenu($event,'contato')" class="nav-cta">Contato</a></li>
+    </ul>
+
+    <button class="hamburger" [class.active]="menuOpen" (click)="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>

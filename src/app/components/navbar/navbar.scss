@@ -1,0 +1,125 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.35s ease;
+
+  &.scrolled {
+    background: rgba(13, 27, 14, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 200, 83, 0.15);
+  }
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 48px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+
+  a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.25s;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    &:hover {
+      color: var(--text);
+      &::after { width: 100%; }
+    }
+  }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--dark) !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    &::after { display: none; }
+    &:hover { background: var(--accent-dark); }
+  }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  &.active {
+    span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--dark-alt);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 32px;
+    gap: 28px;
+    transition: right 0.35s ease;
+    border-left: 1px solid var(--card-border);
+
+    &.open { right: 0; }
+
+    a { font-size: 1.1rem; }
+  }
+}

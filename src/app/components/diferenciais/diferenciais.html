@@ -1,0 +1,16 @@
+<section class="diferenciais" id="diferenciais">
+  <div class="container">
+    <div class="diff-header fade-in">
+      <span class="section-tag">Por Que Escolher a Vox</span>
+      <h2 class="section-title">Nossos <span>Diferenciais</span></h2>
+    </div>
+
+    <div class="diff-grid stagger-children">
+      <div class="diff-card" *ngFor="let d of diferenciais">
+        <i [class]="'fa-solid ' + d.icon"></i>
+        <h3>{{ d.title }}</h3>
+        <p>{{ d.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>

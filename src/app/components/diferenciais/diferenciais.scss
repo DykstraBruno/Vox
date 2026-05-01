@@ -1,0 +1,53 @@
+.diferenciais {
+  padding: 100px 24px;
+  background: linear-gradient(180deg, var(--dark-alt) 0%, var(--dark) 100%);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.diff-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+.diff-card {
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+
+  &:hover {
+    border-color: rgba(0, 200, 83, 0.4);
+    transform: translateY(-4px);
+  }
+
+  i {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+}

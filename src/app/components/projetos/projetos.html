@@ -1,0 +1,26 @@
+<section class="projetos" id="projetos">
+  <div class="container">
+    <div class="proj-header fade-in">
+      <span class="section-tag">Casos de Sucesso</span>
+      <h2 class="section-title">Projetos <span>Realizados</span></h2>
+      <p class="section-subtitle">
+        Resultados reais que comprovam nosso comprometimento com o meio ambiente e com os clientes.
+      </p>
+    </div>
+
+    <div class="proj-grid stagger-children">
+      <article class="proj-card" *ngFor="let p of projetos">
+        <div class="proj-icon"><i [class]="'fa-solid ' + p.icon"></i></div>
+        <div class="proj-body">
+          <span class="proj-tag">{{ p.tag }}</span>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.desc }}</p>
+          <div class="proj-meta">
+            <span><i class="fa-solid fa-location-dot"></i> {{ p.local }}</span>
+            <span><i class="fa-solid fa-calendar"></i> {{ p.ano }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

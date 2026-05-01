@@ -1,0 +1,136 @@
+/* ============================================================
+   VARIÁVEIS GLOBAIS
+   ============================================================ */
+:root {
+  --accent: #00c853;
+  --accent-dark: #00a846;
+  --accent-light: #69f0ae;
+  --dark: #0d1b0e;
+  --dark-alt: #132215;
+  --green-800: #2e7d32;
+  --green-900: #1b5e20;
+  --text: #e8f5e9;
+  --text-muted: #a5d6a7;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(0, 200, 83, 0.15);
+  --font: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --transition: 0.3s ease;
+  --radius: 12px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font);
+  background-color: var(--dark);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   UTILITÁRIOS
+   ============================================================ */
+.section-tag {
+  display: inline-block;
+  background: rgba(0, 200, 83, 0.12);
+  border: 1px solid rgba(0, 200, 83, 0.3);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text);
+
+  span { color: var(--accent); }
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-top: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+
+  &-primary {
+    background: var(--accent);
+    color: var(--dark);
+    &:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0, 200, 83, 0.35); }
+  }
+
+  &-outline {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid rgba(255,255,255,0.3);
+    &:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  }
+}
+
+/* ============================================================
+   ANIMAÇÕES DE ENTRADA (Intersection Observer)
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.stagger-children.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) { transition-delay: #{($i - 1) * 0.1}s; }
+  }
+}
+
+/* ============================================================
+   SCROLLBAR CUSTOMIZADA
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--green-800); border-radius: 3px; }

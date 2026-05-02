@@ -11,10 +11,10 @@ import { CommonModule } from '@angular/common';
 export class Sobre {
   features = [
     'Licença ambiental completa e regularizada',
-    'Frota moderna com rastreamento em tempo real',
-    'Destinação final 100% legal e documentada',
-    'Atendimento 24h para emergências',
-    'Equipe técnica certificada e treinada',
+    'Atuação em cerca de 30 municípios no Piauí e Maranhão',
+    'Sede principal em Teresina, PI',
+    'Serviços de coleta, varredura, capina e remoção de areia',
+    'Comprometida com a campanha "Cidade Limpa, Dever de Todos!"',
   ];
 
   scroll(event: Event, id: string) {

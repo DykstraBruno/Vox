@@ -3,13 +3,16 @@
     <div class="gal-header fade-in">
       <span class="section-tag">Nossa Operação</span>
       <h2 class="section-title">Em <span>Campo</span></h2>
-      <p class="section-subtitle">Veja nossa frota, equipes e estrutura operacional em ação.</p>
+      <p class="section-subtitle">Conheça os serviços realizados pela equipe da Vox Ambiental em campo.</p>
     </div>
 
     <div class="gal-grid stagger-children">
       <div class="gal-item" *ngFor="let item of items" [class]="item.size">
-        <div class="gal-placeholder">
-          <i [class]="'fa-solid ' + item.icon"></i>
+        <div class="gal-thumb" [style.background]="item.gradient">
+          <i class="fa-solid" [class]="'fa-solid ' + item.icon"></i>
+        </div>
+        <div class="gal-overlay">
+          <i class="fa-solid" [class]="'fa-solid ' + item.icon"></i>
           <span>{{ item.label }}</span>
         </div>
       </div>

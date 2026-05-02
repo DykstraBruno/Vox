@@ -77,8 +77,8 @@ public/
 
 ```bash
 # Clone o repositório
-git clone <url-do-repositorio>
-cd vox-ambiental
+git clone https://github.com/DykstraBruno/Vox.git
+cd Vox
 
 # Instale as dependências
 npm install
@@ -116,7 +116,6 @@ Os arquivos gerados ficam em `dist/vox-ambiental/browser/`.
 
 ## Contato da Empresa
 
-- **Site:** em desenvolvimento
 - **Instagram:** [@vox.ambiental](https://www.instagram.com/vox.ambiental/)
 - **WhatsApp:** (11) 99999-0000
 - **E-mail:** contato@voxambiental.com.br
